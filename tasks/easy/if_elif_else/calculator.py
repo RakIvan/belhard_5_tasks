@@ -22,7 +22,17 @@ from typing import Union
 
 
 def calculator(num1: int, num2: int, operation: str) -> Union[int, float, str]:
-    result = None
+    if operation in ["+", "-", "*", "/"]:
+        if operation in "+":
+            result = num1 + num2
+        elif operation in "-":
+            result = num1 - num2
+        elif operation in "*":
+            result = num1 * num2
+        else:
+            result = num1 / num2
+    else:
+        result = "Неизвестная операция"
     return result
 
 
