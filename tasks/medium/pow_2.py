@@ -13,7 +13,17 @@ is_pow_2(17) -> False
 
 
 def is_pow_2(number) -> bool:
-    return None
+    if number == 1:
+        return True
+    current = number
+    while current > 1:
+        whole_part, remainder = divmod(current, 2)
+        if remainder == 0 and whole_part > 1:
+            current = whole_part
+        elif remainder == 0 and whole_part == 1:
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':
